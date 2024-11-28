@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mix Percentages</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Mix Percentages</h1>
+        <form action="/mix" method="post">
+            <label for="drink1percent">Enter % of drink 1:</label>
+            <input type="number" step="0.01" name="drink1percent" required>
+            <label for="drink1cl">Enter amount in cl of drink 1:</label>
+            <input type="number" step="0.01" name="drink1cl" required>
+            <label for="drink2percent">Enter % of drink 2:</label>
+            <input type="number" step="0.01" name="drink2percent" required>
+            <label for="drink2cl">Enter amount in cl of drink 2:</label>
+            <input type="number" step="0.01" name="drink2cl" required>
+            <button type="submit">Calculate</button>
+        </form>
+        {% if result %}
+        <h3>Result:</h3>
+        <p>{{ result }}</p>
+        {% endif %}
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+</html>
